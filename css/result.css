@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100vh;
+}
+body {
+  font-family: "Open Sans";
+  background-color: rgb(78, 66, 66);
+}
+
+.result-wrapper {
+  color: bisque;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1{
+  color:bisque;
+  font-size: 5em;
+}
+#zodiac-date{
+  color: bisque;
+}
+/* Style untuk tabel */
+table {
+  color:bisque;
+  width: 80%;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+/* Style untuk sel header */
+
+
+/* Style untuk sel data */
+td {
+  padding: 8px;
+}
+
+/* Style untuk baris genap */
+
+/* Style untuk baris saat dihover */
+tr:hover {
+  background-color: #ddd;
+}
+.sign{
+  text-transform:capitalize;
+}
+img {
+  width: 20%;
+  height: 20%;
+}
