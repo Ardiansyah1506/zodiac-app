@@ -23,45 +23,118 @@ body {
   align-items: center;
 }
 
+.card h1 {
+  text-align: center;
+  font-size: 20px;
+}
+
 .card {
-  width: 20vw;
+  width: 90%; /* Mengubah lebar kartu agar lebih responsif */
+  max-width: 500px; /* Membatasi lebar kartu maksimum */
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0px 20px 100px rgba(0, 0, 0, 0.3);
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+p {
+  margin-bottom: 10px; /* Memberikan sedikit ruang antara paragraf */
 }
 
 input[type="date"] {
-  padding: 0 20px;
+  padding: 10px 20px;
   background-color: #e8e7e7;
+  border-radius: 10px;
 }
+
+.checkbox-group {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Membuat grid yang responsif */
+  gap: 5px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+form p {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:checked::before {
+  content: "\2713";
+  font-size: 16px;
+  color: blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.checkbox-group input[type="checkbox"]:hover {
+  border-color: #777;
+}
+
 input[type="submit"] {
   background-color: #f73668;
   color: #fff;
   cursor: pointer;
   margin-top: 20px;
-  transition: 0.4s all;
-}
-input[type="submit"]:hover {
-  background-color: #fff;
-  color: #f73668;
-  border: 2px solid currentColor;
-}
-
-input[type="date"],
-input[type="submit"] {
+  border: none;
   border-radius: 15px;
   width: 100%;
   height: 50px;
-  border: none;
   font-size: 16px;
+  transition: background-color 0.4s, color 0.4s;
 }
-input:focus {
-  outline: none;
+
+input[type="submit"]:hover {
+  background-color: #fff;
+  color: #f73668;
+}
+
+/* Responsiveness using media queries */
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
 }
 
 @media screen and (max-width: 576px) {
   .card {
-    width: 80vw;
+    width: 95%; /* Adjust width for smaller screens */
   }
 }

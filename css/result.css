@@ -23,10 +23,11 @@ body {
 
 h1{
   color:bisque;
-  font-size: 5em;
+  font-size: 4em;
 }
-#zodiac-date{
+.zodiac-date{
   color: bisque;
+font-size: 0.8rem;
 }
 /* Style untuk tabel */
 table {
@@ -47,13 +48,44 @@ td {
 /* Style untuk baris genap */
 
 /* Style untuk baris saat dihover */
-tr:hover {
-  background-color: #ddd;
-}
+
 .sign{
   text-transform:capitalize;
 }
 img {
-  width: 20%;
-  height: 20%;
+  width: 15%;
+  height: 15%;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(53, 39, 39);
+  width: 100%;
+}
+
+footer p{
+  padding: 10px;
+  font-weight: 600;
+  color: wheat;
+}
+
+
+@media screen and (max-width: 576px) {
+  footer{
+    position:absolute;
+  }
+  footer p {
+    font-size: 8px;
+  }
+
+  table{
+    font-size: 10px;
+  }
+  img{
+    width: 40%;
+    height: 40%;
+  }
 }

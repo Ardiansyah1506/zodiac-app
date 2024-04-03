@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zodaic Signs Finder</title>
 
     <!-- index.css -->
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index.css" />
 
     <!-- open sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="wrapper">
-        <div class="card">
-            <form onsubmit="findZodiac(event)">
-                <input type="date" required>
-                <input type="submit" value="Temukan Zodiak Anda">
+      <div class="card">
+        <h1>Temukan Zodiak Anda dan Ramalannya</h1>
+        <form onsubmit="findZodiac(event)">
+          <div class="dateinput">
+            <p>tanggal lahir</p>
+            <input type="date" required />
+          </div>
 
-            </form>
-        </div>
+          <div class="year">
+            <p>Pilih Tahun untuk menentukan ramalan anda</p>
+            <div class="checkbox-group">
+              <label
+                ><input type="checkbox" name="age" value="10" /> 10 Tahun</label
+              >
+              <label
+                ><input type="checkbox" name="age" value="20" /> 20 Tahun</label
+              >
+              <label
+                ><input type="checkbox" name="age" value="30" /> 30 Tahun</label
+              >
+              <label
+                ><input type="checkbox" name="age" value="50" /> 50 Tahun</label
+              >
+            </div>
+          </div>
+
+          <input type="submit" value="Temukan Zodiak Anda" />
+        </form>
+      </div>
     </div>
 
     <!-- index.js -->
     <script src="js/index.js"></script>
-</body>
-
+  </body>
 </html>
