@@ -10,6 +10,7 @@ if (!zodiacSign) {
 document.title = `Your Zodiac - ${zodiacSign}`;
 
 const signElements = document.querySelectorAll(".sign");
+const zodiacElements = document.querySelectorAll(".zodiac");
 const Personality = document.querySelectorAll(".personal");
 const futureSign = document.querySelectorAll(".future");
 const ageShow = document.querySelectorAll(".age");
@@ -23,6 +24,9 @@ imageElement.alt = zodiacSign;
 signElements.forEach(sign => {
   sign.innerHTML = zodiacSign;
 });
+
+zodiacElements.forEach(f => f.innerHTML = zodiacSign);
+
 futureSign.forEach(f => {
   f.innerHTML = future;
 });

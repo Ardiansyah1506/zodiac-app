@@ -12,6 +12,7 @@ html {
 
 body {
   font-family: "Open Sans";
+  min-width: 320px;
 }
 
 .wrapper {
@@ -142,24 +143,25 @@ input[type="submit"]:hover {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: 0;
   background-color: #f73668;
   width: 100%;
+  min-width: 320px;
 }
 
 footer p {
-  padding-top: 10px;
+  padding: 10px;
   font-weight: 600px;
   color: white;
 }
 
 /* Responsiveness using media queries */
 @media screen and (max-width: 768px) {
-  .card {
+  .card-body {
     padding: 20px; /* Adjust padding for smaller screens */
   }
 }
@@ -167,5 +169,14 @@ footer p {
 @media screen and (max-width: 576px) {
   .card {
     width: 95%; /* Adjust width for smaller screens */
+  }
+
+  .card-header h1 {
+    font-size: 12px;
+  }
+
+  footer p {
+    padding: 5px;
+    font-size: 10px;
   }
 }

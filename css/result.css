@@ -12,8 +12,8 @@ body {
 }
 
 .container {
-  border: 1px solid pink;
   width: 100%;
+  min-width: 320px;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -68,7 +68,8 @@ td {
 
 /* Style untuk baris saat dihover */
 
-.sign {
+.sign,
+.zodiac {
   text-transform: capitalize;
 }
 img {
@@ -87,27 +88,49 @@ footer {
   justify-content: center;
   background-color: #f73668;
   width: 100%;
+  min-width: 320px;
 }
 
 footer p {
-  padding-top: 10px;
-  font-weight: 600;
+  padding: 10px;
+  font-weight: 600px;
   color: white;
 }
 
-@media screen and (max-width: 576px) {
-  footer {
-    position: absolute;
+@media screen and (max-width: 1250px) {
+  .result-wrapper {
+    width: 85%;
+    font-size: 12px;
   }
-  footer p {
-    font-size: 8px;
-  }
+}
 
+@media screen and (max-width: 576px) {
   table {
     font-size: 10px;
   }
+
   img {
     width: 40%;
     height: 40%;
+  }
+
+  .sign {
+    font-size: 20px;
+  }
+
+  .zodiac-date {
+    font-size: 12px;
+  }
+
+  td {
+    padding: 12px;
+  }
+
+  footer {
+    position: absolute;
+  }
+
+  footer p {
+    font-size: 8px;
   }
 }
