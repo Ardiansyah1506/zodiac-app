@@ -12,9 +12,10 @@ body {
 }
 
 .container {
+  border: 1px solid black;
   width: 100%;
-  min-width: 320px;
   height: 100vh;
+  min-width: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,6 +24,7 @@ body {
 .result-wrapper {
   border-radius: 20px;
   padding: 12px;
+  height: fit-content;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -105,6 +107,13 @@ footer p {
 }
 
 @media screen and (max-width: 576px) {
+  .container {
+    align-items: normal;
+  }
+  .result-wrapper {
+    margin-top: 75px;
+  }
+
   table {
     font-size: 10px;
   }
