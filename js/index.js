@@ -25,10 +25,10 @@ const updateSelectedYear = () => {
 
 
 const monthNames = [
-  "January", "February", "March",
-  "April", "May", "June", "July",
-  "August", "September", "October",
-  "November", "December"
+  "Januari", "Februari", "Maret",
+  "April", "Mei", "June", "Juli",
+  "Agustus", "September", "Oktober",
+  "November", "Desember"
 ];
 const findZodiac = (event) => {
   event.preventDefault();
@@ -40,6 +40,8 @@ const findZodiac = (event) => {
   const year = dateOfBirth.getFullYear();
   let zodiacSign = "";
   let zodiacDate = "";
+  let age = new Date().getFullYear() - year;
+  let textAge = `${age} Tahun`;
   let Personality = "";
   let Future = "";
 
@@ -54,11 +56,11 @@ if (day === 1 || day === 21 || day === 31) {
   suffix = "th";
 }
 
-const date = `${getMonth} ${day}${suffix}, ${year}`;
+const date = `${day} ${getMonth} ${year}`;
 
   if ((month === 0 && day >= 20) || (month === 1 && day <= 18)) {
     zodiacSign = "aquarius";
-    zodiacDate = "January 20th — February 18th";
+    zodiacDate = "20 Januari — 18 Februari";
     Personality = "Anda adalah Inovator yang kreatif, mandiri, dan idealis. Anda senang menciptakan perubahan dan berkontribusi pada masyarakat."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan bahwa visi dan ide-ide revolusionermu membawa dampak yang signifikan dalam masyarakat. Kamu akan menjadi agen perubahan yang kuat dan mempengaruhi banyak orang di sekitarmu. Jadilah pembaharu yang berani dan teruslah berjuang untuk keadilan sosial!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan bahwa kepribadianmu yang unik dan kreativitasmu membawa kesuksesan dalam berbagai bidang. Kamu akan menikmati kebebasan untuk mengekspresikan diri dan menjalani kehidupan sesuai dengan aturanmu sendiri. Tetaplah asli dan teruslah menginspirasi orang lain dengan kepribadianmu yang berbeda!`
@@ -68,7 +70,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
 
   } else if ((month === 1 && day >= 19) || (month === 2 && day <= 20)) {
     zodiacSign = "pisces";
-    zodiacDate = "February 19th — March 20th";
+    zodiacDate = "19 Februari — 20 Maret";
     Personality = "Anda adalah Intuitif, imajinatif, dan emosional. Anda memiliki imajinasi yang kuat dan kepekaan terhadap perasaan orang lain."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan bahwa intuisimu yang kuat dan empatimu membawa kamu ke arah yang tepat dalam hidup. Kamu akan menemukan kedamaian dalam kreativitasmu dan kebahagiaan dalam hubungan yang mendalam. Jadilah terbuka terhadap perasaanmu dan jangan ragu untuk mengejar impianmu!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan bahwa kepekaanmu terhadap dunia dan jiwa yang dalam membawa kamu ke perjalanan spiritual yang mendalam. Kamu akan menemukan makna yang lebih besar dalam kehidupanmu dan merasa terhubung dengan alam semesta. Teruslah bermeditasi dan mencari kedamaian dalam dirimu sendiri!`
@@ -78,7 +80,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
 
   } else if ((month === 2 && day >= 21) || (month === 3 && day <= 19)) {
     zodiacSign = "aries";
-    zodiacDate = "March 21 — April 19th";
+    zodiacDate = "21 Maret — 19 April";
     Personality = "Anda adalah Pemimpin yang berani dan bersemangat. Anda suka mengambil inisiatif dan penuh energi."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan banyak kesempatan di jalur kariermu. Dengan keberanian dan tekadmu, kamu akan mencapai banyak tujuan yang kamu impikan. Pastikan untuk tetap fokus dan pantang menyerah!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan stabilitas dan kebahagiaan yang luar biasa dalam hubunganmu. Keuanganmu akan berjalan lancar dan kreasi-kecreasianmu akan berkembang. Jaga hubunganmu dengan orang-orang terdekat dan jangan ragu untuk mengejar impianmu!`
@@ -87,7 +89,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
     : ""
   } else if ((month === 3 && day >= 20) || (month === 4 && day <= 20)) {
     zodiacSign = "taurus";
-    zodiacDate = "April 20th — May 20th";
+    zodiacDate = "20 April — 20 Mei";
     Personality = "Anda adalah Stabil, praktis, dan memiliki kesetiaan yang dalam. Anda menikmati keindahan dan kenyamanan."
     Future = (selectedYear == 10) ? `Dalam 10 tahun ke depan, kamu akan menemukan stabilitas finansial dan kemajuan yang signifikan dalam kariermu. Hubunganmu akan semakin kuat dan penuh cinta. Jangan ragu untuk mengejar ambisi dan impianmu!` 
     : (selectedYear == 20) ? `Dalam 20 tahun mendatang, kamu akan menemukan keseimbangan antara kehidupan pribadi dan profesionalmu. Kamu akan menikmati kegiatan kreatif dan artistik. Jadikan setiap hari sebagai kesempatan untuk berkembang dan belajar!`
@@ -96,7 +98,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
     : ""
   } else if ((month === 4 && day >= 21) || (month === 5 && day <= 20)) {
     zodiacSign = "gemini";
-    zodiacDate = "May 21 — June 20th";
+    zodiacDate = "21 Mei — 20 Juni";
     Personality = "Anda adalah Komunikator yang cerdas dan fleksibel. Anda senang menjelajahi hal-hal baru dan memiliki daya adaptasi yang baik."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan dirimu lebih terbuka terhadap berbagai ide dan peluang baru. Komunikasimu yang lincah akan membantumu meraih sukses dalam karier dan hubungan sosialmu. Jangan ragu untuk terus mengembangkan kreativitasmu!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan bahwa kecerdasanmu dan keingintahuanmu membawa kesuksesan dalam banyak hal. Jaga keseimbangan antara kehidupan pribadi dan profesionalmu, dan jangan ragu untuk mengejar impian yang besar!`
@@ -105,7 +107,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
     : ""
   } else if ((month === 5 && day >= 21) || (month === 6 && day <= 22)) {
     zodiacSign = "cancer";
-    zodiacDate = "June 21 —July 22";
+    zodiacDate = "21 Juni — 22 Juli ";
     Personality = "Anda adalah Penuh perhatian, sensitif, dan emosional. Anda sangat menghargai hubungan dan memiliki intuisi yang kuat."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan dirimu lebih fokus pada hubungan dan keluarga. Emosimu yang kuat akan membantumu menjalin ikatan yang erat dengan orang-orang terdekat. Jaga kesehatan mentalmu dan jangan ragu untuk mengejar impianmu!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan bahwa perasaan sensitifmu adalah kekuatan yang besar. Kamu akan menikmati kedamaian dan stabilitas dalam hubungan pribadimu. Jadikanlah rumahmu tempat yang nyaman dan hangat bagi orang-orang yang kamu cintai!`
@@ -114,7 +116,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
     : ""
   } else if ((month === 6 && day >= 23) || (month === 7 && day <= 22)) {
     zodiacSign = "leo";
-    zodiacDate = "July 23rd — August 22";
+    zodiacDate = "23 Juli — 22 Agustus";
     Personality = "Anda adalah Pemimpin yang percaya diri, berani, dan karismatik. Anda suka menjadi pusat perhatian dan memiliki ambisi yang besar."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan dirimu semakin percaya diri dan bersemangat dalam mengejar tujuan kariermu. Bakatmu yang kreatif akan bersinar terang, dan kamu akan menjadi sumber inspirasi bagi banyak orang di sekitarmu. Teruslah mengejar impianmu dengan penuh semangat!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan dirimu semakin berkembang secara pribadi dan profesional. Kehidupan sosialmu akan semakin ceria, dan kamu akan dikelilingi oleh orang-orang yang mendukung. Jadilah pemberani dan percaya pada dirimu sendiri!`
@@ -123,7 +125,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
     : ""
   } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
     zodiacSign = "virgo";
-    zodiacDate = "August 23 — September 22nd";
+    zodiacDate = "23 Agustus  — 22 September ";
     Personality = "Anda adalah Perfeksionis yang analitis, praktis, dan berdedikasi. Anda cenderung rajin dan memperhatikan detail."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan bahwa ketelitianmu dan dedikasimu membawa kesuksesan dalam berbagai aspek kehidupanmu. Kesehatanmu akan menjadi prioritas, dan kamu akan menemukan keseimbangan antara kerja dan waktu luang. Jadilah teladan bagi orang-orang di sekitarmu!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan dirimu semakin terorganisir dan efisien dalam mengejar tujuanmu. Kamu akan menikmati kehidupan yang terstruktur dan stabil, dengan hubungan yang mendukung dan penuh cinta. Tetaplah konsisten dan tetaplah berusaha untuk menjadi yang terbaik!`
@@ -132,7 +134,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
     : ""
   } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
     zodiacSign = "libra";
-    zodiacDate = "September 23 — October 22";
+    zodiacDate = "23 September — 22 Oktober";
     Personality = "Anda adalah Adil, diplomatik, dan suka kedamaian. Anda senang menciptakan keseimbangan dan harmoni di sekitar Anda."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan dirimu semakin berfokus pada keseimbangan dan keadilan dalam kehidupanmu. Hubunganmu akan menjadi pusat perhatian, dan kamu akan menemukan kedamaian dalam kebersamaan dengan orang-orang terdekat. Teruslah memperjuangkan perdamaian dan kebaikan!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan bahwa keindahan dan harmoni menjadi bagian penting dari kehidupanmu. Bakatmu dalam seni dan kreativitas akan berkembang, dan kamu akan menikmati momen-momen yang penuh inspirasi. Tetaplah berusaha untuk menciptakan keindahan di sekelilingmu!`
@@ -141,7 +143,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
     : ""
   } else if ((month === 9 && day >= 23) || (month === 10 && day <= 21)) {
     zodiacSign = "scorpio";
-    zodiacDate = "October 23rd — November 21";
+    zodiacDate = "23 Oktober  — 21 November";
     Personality = "Anda adalah Misterius, kuat, dan penuh gairah. Anda memiliki intuisi yang kuat dan keinginan untuk memahami hal-hal yang tersembunyi."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan bahwa kekuatan dan keteguhanmu membawa perubahan positif dalam kehidupanmu. Intuisimu yang kuat akan membantumu menghadapi tantangan dengan percaya diri. Jangan ragu untuk mengejar tujuanmu dengan tekad yang kuat!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan kedalaman emosional yang lebih besar dalam dirimu dan hubunganmu. Kamu akan menikmati transformasi positif dalam kehidupan pribadi dan kariermu. Jadilah terbuka terhadap perubahan dan tetaplah setia pada dirimu sendiri!`
@@ -150,7 +152,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
     : ""
   } else if ((month === 10 && day >= 22) || (month === 11 && day <= 21)) {
     zodiacSign = "sagittarius";
-    zodiacDate = "November 22 — December 21";
+    zodiacDate = "22 November — 21 Desember";
     Personality = "Anda adalah Inovator yang kreatif, mandiri, dan idealis. Anda senang menciptakan perubahan dan berkontribusi pada masyarakat."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan dirimu semakin terbuka terhadap petualangan dan pengetahuan baru. Semangatmu yang penuh energi akan membawa kamu ke tempat-tempat yang menakjubkan dan kesempatan-kesempatan yang menarik. Jadilah penjelajah yang berani dan nikmati setiap momen petualanganmu!` 
     : (selectedYear == 20) ? ` Dalam 20 tahun ke depan, kamu akan menemukan bahwa impianmu semakin dekat untuk diwujudkan. Kamu akan menikmati kebebasan dan kemandirian dalam menjalani kehidupanmu. Tetaplah optimis dan teruslah mengejar visimu dengan semangat yang tak terbendung!`
@@ -159,7 +161,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
     : ""
   } else if ((month === 11 && day >= 22) || (month === 0 && day <= 19)) {
     zodiacSign = "capricorn";
-    zodiacDate = "December 22nd — January 19th";
+    zodiacDate = "22 Desember  — 19 Januari ";
     Personality = "Anda adalah Ambisius, tangguh, dan berdedikasi. Anda suka merencanakan masa depan Anda dan bekerja keras untuk mencapai tujuan Anda."
     Future = (selectedYear == 10) ? `Dalam 10 tahun mendatang, kamu akan menemukan bahwa ketekunan dan dedikasimu membawa kesuksesan yang luar biasa dalam kariermu. Keuanganmu akan stabil, dan kamu akan menemukan keamanan dalam kehidupan pribadimu. Tetaplah fokus pada tujuanmu dan jangan ragu untuk mengejar ambisi yang tinggi!` 
     : (selectedYear == 20) ? `Dalam 20 tahun ke depan, kamu akan menemukan bahwa kerja kerasmu membawa penghargaan yang layak. Kehidupan pribadimu akan berkembang dengan baik, dan kamu akan menemukan keseimbangan antara tanggung jawab dan kesenangan. Tetaplah tekun dan pantang menyerah dalam mencapai impianmu!`
@@ -170,6 +172,7 @@ const date = `${getMonth} ${day}${suffix}, ${year}`;
   
     sessionStorage.setItem("zodiacSign", zodiacSign);
   sessionStorage.setItem("zodiacDate", zodiacDate);
+  sessionStorage.setItem("age", textAge);
   sessionStorage.setItem("personal", Personality);
   sessionStorage.setItem("future", Future);
   sessionStorage.setItem("date", date);
