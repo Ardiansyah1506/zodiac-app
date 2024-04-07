@@ -21,6 +21,7 @@ body {
 }
 
 .result-wrapper {
+  margin-top: 50px;
   border-radius: 20px;
   padding: 12px;
   height: fit-content;
@@ -110,7 +111,7 @@ footer p {
     align-items: normal;
   }
   .result-wrapper {
-    margin-top: 75px;
+    margin-top: 50px;
   }
 
   table {
