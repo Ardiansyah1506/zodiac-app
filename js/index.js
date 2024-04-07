@@ -40,21 +40,20 @@ const findZodiac = (event) => {
   const year = dateOfBirth.getFullYear();
   let zodiacSign = "";
   let zodiacDate = "";
-  let age = new Date().getFullYear() - year;
-  let textAge = `${age} Tahun`;
   let Personality = "";
   let Future = "";
-
-let suffix = "";
-if (day === 1 || day === 21 || day === 31) {
-  suffix = "st";
-} else if (day === 2 || day === 22) {
-  suffix = "nd";
-} else if (day === 3 || day === 23) {
-  suffix = "rd";
-} else {
-  suffix = "th";
-}
+  let textAge = "";
+  let age = new Date().getFullYear() - year;
+  
+   if (age < 1) {
+        if (month === new Date().getMonth()) {
+            textAge = `${day} Hari`;
+        } else {
+            textAge = `${month - 1 } Bulan`;
+        }
+    } else {
+        textAge = `${age} Tahun`;
+    }
 
 const date = `${day} ${getMonth} ${year}`;
 
